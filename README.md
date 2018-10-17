@@ -17,7 +17,7 @@ local frequency of a word in the document i.e. the word is weighed by how many t
 # Sublinear Term Frequency: 
 sometimes a word is used too often so we want to reduce its influence compared to other less frequently used words for that we can use some sublinear function, e.g. logtf(w,d) 
 
-# Document Frequency
+# Document Frequency (DF)
 Global frequency of a word in the document collection . It is the number of documents that contain the word.
 
 # Inverse Document Frequency (IDF)
@@ -30,3 +30,12 @@ When weighting we want to get:
 3. this can be done by combining TF and IDF:
 4. use sub-linear TF to avoid the dominating effect of words that occur very frequently
 5. use IDF to reduce weights of terms that occur more frequently to ensure that document matching is done with more discriminative words. As the result, terms appearing too rarely or too frequently are ranked low
+
+
+so, mathematically
+                              tf-idf (w,d∣D) = (1 + log (tf(w,d))) ⋅ log ( |D| / df(w,D))
+
+
+
+
+
